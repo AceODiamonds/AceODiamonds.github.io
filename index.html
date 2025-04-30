@@ -11,246 +11,269 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <style>
         body {
-            background-color: #0d0d2b; /* Deep space blue */
-            color: #00ffff; /* Cyan */
+            background-color: #1a1a1a; /* Deep Black */
+            color: #e0e0e0; /* Off-White */
             font-family: 'Share Tech Mono', monospace;
         }
 
         h1, h2, h3 {
             font-family: 'Orbitron', sans-serif;
-            color: #ff00ff; /* Magenta */
-            text-shadow: 0 0 5px #ff00ff;
+            color: #ffff00; /* Bright Yellow */
+            text-shadow: 0 0 8px #ffff00; /* Yellow Glow */
         }
 
         header {
-            background-color: #1a1a4f; /* Darker space blue */
-            border-bottom: 2px solid #00ffff;
-            box-shadow: 0 0 10px #00ffff;
+            background-color: #2a2a2a; /* Darker Black */
+            border-bottom: 2px solid #ffff00; /* Yellow Border */
+            box-shadow: 0 0 10px #ffff00; /* Yellow Shadow */
         }
 
         section {
-            background-color: #1a1a4f; /* Darker space blue */
-            border: 1px solid #00ffff;
-            box-shadow: 0 0 8px #00ffff;
+            background-color: #2a2a2a; /* Darker Black */
+            border: 1px solid #ffff00; /* Yellow Border */
+            box-shadow: 0 0 8px rgba(255, 255, 0, 0.6); /* Yellow Shadow */
+            padding: 1.5rem; /* p-6 equivalent */
+            border-radius: 8px; /* rounded-lg equivalent */
         }
 
-        .text-indigo-700 {
-            color: #00ffff; /* Cyan */
+        .text-yellow-400 { /* Using a Tailwind yellow class */
+            color: #ffff00; /* Bright Yellow */
         }
 
-        .text-indigo-600 {
-             color: #ff00ff; /* Magenta */
+        .text-gray-300 { /* Using a Tailwind gray class for less important text */
+            color: #b0b0b0; /* Light Grey */
         }
 
-        .bg-indigo-700 {
-            background-color: #1a1a4f; /* Darker space blue */
-        }
-         .bg-indigo-200 {
-            background-color: #0d0d2b; /* Deep space blue */
-            color: #00ffff; /* Cyan */
-            border: 1px solid #00ffff;
-        }
-         .bg-indigo-100 {
-            background-color: #0d0d2b; /* Deep space blue */
-            color: #ff00ff; /* Magenta */
-            border: 1px solid #ff00ff;
-        }
 
         a {
-            color: #00ffff; /* Cyan */
+            color: #ffff00; /* Bright Yellow */
             text-decoration: none;
-            text-shadow: 0 0 3px #00ffff;
+            text-shadow: 0 0 3px #ffff00; /* Yellow Glow */
         }
 
         a:hover {
-            color: #ff00ff; /* Magenta */
-            text-shadow: 0 0 5px #ff00ff;
+            color: #ffffff; /* White */
+            text-shadow: 0 0 8px #ffffff; /* White Glow */
         }
          .rounded-lg {
             border-radius: 8px; /* Subtle rounding */
         }
 
         .shadow-md {
-            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3); /* Cyan shadow */
+            box-shadow: 0 4px 8px rgba(255, 255, 0, 0.3); /* Yellow shadow */
         }
 
-        .bg-white {
-             background-color: #1a1a4f; /* Darker space blue */
-        }
          .text-gray-700 {
-            color: #b0b0b0; /* Light grey for content */
+            color: #e0e0e0; /* Off-White for content */
         }
          .text-gray-600 {
-            color: #808080; /* Grey for smaller text */
+            color: #b0b0b0; /* Light Grey for smaller text */
         }
          .text-gray-800 {
-             color: #00ffff; /* Cyan */
+             color: #ffff00; /* Bright Yellow */
          }
          .bg-gray-100 {
-             background-color: #0d0d2b; /* Deep space blue */
+             background-color: #1a1a1a; /* Deep Black */
          }
         footer {
-            background-color: #1a1a4f; /* Darker space blue */
-            border-top: 2px solid #ff00ff;
-            box-shadow: 0 0 10px #ff00ff;
+            background-color: #2a2a2a; /* Darker Black */
+            border-top: 2px solid #ffff00; /* Yellow Border */
+            box-shadow: 0 0 10px #ffff00; /* Yellow Shadow */
         }
 
+        /* Custom layout for left sidebar */
+        .main-layout {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .left-sidebar {
+            width: 100%; /* Full width by default */
+            padding: 1.5rem; /* p-6 equivalent */
+        }
+
+        .main-content {
+            width: 100%; /* Full width by default */
+            padding: 1.5rem; /* p-6 equivalent */
+        }
+
+        @media (min-width: 768px) { /* Medium screens and up */
+            .main-layout {
+                align-items: flex-start; /* Align tops of flex items (sidebar and main content) */
+            }
+            .left-sidebar {
+                width: 30%; /* Adjust width as needed */
+                padding-right: 1.5rem; /* Add some spacing to the right */
+            }
+            .main-content {
+                width: 70%; /* Adjust width accordingly */
+            }
+            /* Apply top margin to sections within main content *except* the first one */
+            .main-content > section + section {
+                margin-top: 1.5rem; /* Add top margin to sections that come after another section */
+            }
+             /* Ensure the very first section in main content has no extra top margin */
+             .main-content > section:first-child {
+                 margin-top: 0;
+             }
+        }
 
     </style>
 </head>
 <body>
 
-    <header class="p-6">
-        <div class="container mx-auto flex items-center space-x-4">
-            <img src="./files/profile.jpg" alt="Profile Image" class="rounded-full w-20 h-20 border-2 border-00ffff shadow-lg shadow-00ffff">
-            <div>
-                <h1 class="text-3xl font-bold">Amir Sasanfar</h1>
-                <p class="text-lg">MSc student in Quantum Engineering | Bsc Computer Engineering</p>
-
-            </div>
-        </div>
-    </header>
-
-    <section class="container mx-auto p-6 mt-6 rounded-lg">
-        <h2 class="text-2xl font-bold mb-4">About Me</h2>
-        <p>I love math, computers and I love the coding<br />
-            Go is the language I like to write all my code in<br />
-            Python's everywhere so one has no choice but to use it<br />
-            Blockchain and A.I are fun but Quantum is fascinating<br />
-            (I did my best to keep it short and make it rhyme.)<br />
-            In a nutshell, I study quantum computing. Welcome to my personal page!
-
-
-        </p>
-    </section>
-    <section class="container mx-auto p-6 mt-6 rounded-lg">
-        <h2 class="text-2xl font-bold mb-4">Education</h2>
-        <ul class="space-y-4">
-            <li>
-                <h3 class="text-xl font-semibold">Politecnico di Torino</h3>
-                <p class="text-gray-700">Master of Science - MS, Quantum Engineering</p>
-                <p class="text-sm text-gray-600">Oct 2023 – present</p>
-
-            </li>
-            <li>
-                <h3 class="text-xl font-semibold">Politecnico di Torino</h3>
-                <p class="text-gray-700">Bachelor of Science - BS, Computer Engineering</p>
-                <p class="text-sm text-gray-600">Oct 2019 – Jul 2023</p>
-            </li>
-        </ul>
-    </section>
-
-    <section class="container mx-auto p-6 mt-6 rounded-lg">
-        <h2 class="text-2xl font-bold mb-4">Experience</h2>
-        <ul class="space-y-4">
-            <li>
-                <h3 class="text-xl font-semibold">Research assistant - Politecnico di Torino</h3>
-
-                <p class="text-gray-700">Working on an autonomous drone navigation framework</p>
-                    <p class="text-sm text-gray-600">Mar 2025 – present</p>
-
-            </li>
-
-            <li>
-                <h3 class="text-xl font-semibold">QubiTO Student Team - Politecnico di Torino</h3>
-                <p class="text-gray-700">Team Member</p>
-                <ul class="list-disc list-inside ml-4 text-gray-700">
-                    <li> QubiTO is a student community at my University with focus on education in quantum technologies</li>
-                </ul>
-                <p class="text-sm text-gray-600">Nov 2024 – present</p>
-            </li>
-            <li>
-                <h3 class="text-xl font-semibold">Sparco</h3>
-                <p class="text-gray-700">Data Engineer-internship</p>
-                <ul class="list-disc list-inside ml-4 text-gray-700">
-                    <li>Architected data pipelines using AWS cloud services</li>
-                    <li>Designed and implemented ETL processes</li>
-                    <li>Utilizing a suite of AWS tools(S3, lambda, glue, quicksight, amazon forecast)</li>
-                </ul>
-                <p class="text-sm text-gray-600">Sep 2023 – Jan 2024</p>
-            </li>
-            <li>
-                <h3 class="text-xl font-semibold">BitPolito Student Team - Politecnico di Torino</h3>
-                <p>Team member | December 2022 - September 2023</p>
-                <ul class="list-disc list-inside ml-4 text-gray-700">
-                    <li>Frontend development</li>
-                    <li>Cryptography team member</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-    <section class="container mx-auto p-6 mt-6 rounded-lg">
-        <h2 class="text-2xl font-bold mb-4">Projects</h2>
-        <ul class="space-y-4">
-            <li class="p-5 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold mb-2">Quantum Permutation Synchronization</h3>
-                <p class="text-gray-700 mb-2"></p>
-                <div class="flex flex-wrap space-x-2 mb-3">
-                    <span class="px-2 py-1 rounded text-sm">Quantum Optimization</span>
-                    <span class="px-2 py-1 rounded text-sm">Quantum Annealing</span>
-                    <span class="px-2 py-1 rounded text-sm">Quantum Computing</span>
+    <div class="container mx-auto main-layout">
+        <div class="left-sidebar">
+            <header class="p-6">
+                <div class="flex items-center space-x-4">
+                    <img src="./files/profile.jpg" alt="Profile Image" class="rounded-lg w-32 h-32 border-2 border-yellow-400 shadow-lg shadow-yellow-400">
+                    <div>
+                        <h1 class="text-3xl font-bold">Amir Sasanfar</h1>
+                        <p class="text-lg text-gray-300">MSc student in Quantum Engineering | Bsc Computer Engineering</p>
+                    </div>
                 </div>
-                <a href="qps.html" class="hover:underline">View Project →</a>
-            </li>
-        </ul>
-    </section>
-    <section class="container mx-auto p-6 mt-6 rounded-lg">
-        <h2 class="text-2xl font-bold mb-4">Courses & Certificates</h2>
-        <div class="flex flex-wrap space-x-2">
-            <div class="relative inline-block" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                <span class="px-4 py-2 rounded cursor-pointer">IBM A.I Engineering</span>
-                <div
-                x-show="open"
-                class="absolute bg-white shadow-lg rounded mt-2 w-48 p-4 z-10 transition-all duration-300 ease-in-out transform origin-top"
-                x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0 scale-y-75"
-                x-transition:enter-end="opacity-100 scale-y-100"
-                x-transition:leave="transition ease-in duration-200"
-                x-transition:leave-start="opacity-100 scale-y-100"
-                x-transition:leave-end="opacity-0 scale-y-75"
-                >
-                    <ul class="text-sm text-gray-700 space-y-2">
-                        <li x-data="{ show: false }">
-                            <button @click="show = !show" class="w-full text-left">- Machine Learning with python</button>
-                        </li>
-                        <li x-data="{ show: false }">
-                            <button @click="show = !show" class="w-full text-left">- Intro to Deep Learning & Neural Networks</button>
-                            <p x-show="show" x-transition class="text-xs text-gray-600 pl-4">Using Keras</p>
-                        </li>
-                        <li x-data="{ show: false }">
-                            <button @click="show = !show" class="w-full text-left">- Introduction to Computer Vision & Image Processing
-                                </button>
-                        </li>
-                        <li x-data="{ show: false }">
-                            <button @click="show = !show" class="w-full text-left">- PyTorch</button>
-                        </li>
-                        <li x-data="{ show: false }">
-                            <button @click="show = !show" class="w-full text-left">- Deep Learning</button>
-                            <p x-show="show" x-transition class="text-xs text-gray-600 pl-4">Keras & TensorFlow</p>
-                        </li>
-                        <li x-data="{ show: false }">
-                            <button @click="show = !show" class="w-full text-left">- Final Project</button>
-                            <p x-show="show" x-transition class="text-xs text-gray-600 pl-4">An image classification model design</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            </div>
-    </section>
+            </header>
 
+            <section class="mt-6">
+                <h2 class="text-2xl font-bold mb-4">About Me</h2>
+                <p>I love math, computers and I love the coding<br />
+                    Go is the language I like to write all my code in<br />
+                    Python's everywhere so one has no choice but to use it<br />
+                    Blockchain and A.I are fun but Quantum is fascinating<br />
+                    (I did my best to keep it short and make it rhyme.)<br />
+                    In a nutshell, I love programming and I study quantum computing. Welcome to my personal page!
+                </p>
+            </section>
 
-
-
-    <section class="container mx-auto p-6 mt-6 rounded-lg">
-        <h2 class="text-2xl font-bold mb-4">Links</h2>
-        <div class="flex space-x-4">
-            <a href="https://www.linkedin.com/in/amir-sasanfar" target="_blank">LinkedIn</a>
-            <a href="https://github.com/AceODiamonds" target="_blank">GitHub</a>
-            <a href="mailto:sasanfar.amir.99@gmail.com">Email</a>
+            <section class="mt-6">
+                <h2 class="text-2xl font-bold mb-4">Education</h2>
+                <ul class="space-y-4">
+                    <li>
+                        <h3 class="text-xl font-semibold">Politecnico di Torino</h3>
+                        <p class="text-gray-700">Master of Science - MS, Quantum Engineering</p>
+                        <p class="text-sm text-gray-600">Oct 2023 – present</p>
+                    </li>
+                    <li>
+                        <h3 class="text-xl font-semibold">Politecnico di Torino</h3>
+                        <p class="text-gray-700">Bachelor of Science - BS, Computer Engineering</p>
+                        <p class="text-sm text-gray-600">Oct 2019 – Jul 2023</p>
+                    </li>
+                </ul>
+            </section>
         </div>
-    </section>
 
-    <footer class="text-white text-center p-4 mt-6">
+        <div class="main-content">
+            <section>
+                <h2 class="text-2xl font-bold mb-4">Experience</h2>
+                <ul class="space-y-4">
+                    <li>
+                        <h3 class="text-xl font-semibold">Research assistant - Politecnico di Torino</h3>
+                        <p class="text-gray-700">Working on an autonomous drone navigation framework</p>
+                        <p class="text-sm text-gray-600">Mar 2025 – present</p>
+                    </li>
+                    <li>
+                        <h3 class="text-xl font-semibold"><a href="https://www.linkedin.com/company/qubito-student-team-politecnico-di-torino/posts/?feedView=all" target="_blank">QubiTO Student Team - Politecnico di Torino</a></h3>
+                        <p class="text-gray-700">Team Member</p>
+                        <ul class="list-disc list-inside ml-4 text-gray-700">
+                            <li> QubiTO is a student community at my University with focus on education in quantum technologies</li>
+                        </ul>
+                        <p class="text-sm text-gray-600">Nov 2024 – present</p>
+                    </li>
+                    <li>
+                        <h3 class="text-xl font-semibold"><a href="https://www.linkedin.com/company/sparco/posts/?feedView=all" target="_blank">Sparco</a></h3>
+                        <p class="text-gray-700">Data Engineer-internship</p>
+                        <ul class="list-disc list-inside ml-4 text-gray-700">
+                            <li>Architected data pipelines using AWS cloud services</li>
+                            <li>Designed and implemented ETL processes</li>
+                            <li>Utilizing a suite of AWS tools(S3, lambda, glue, quicksight, amazon forecast)</li>
+                        </ul>
+                        <p class="text-sm text-gray-600">Sep 2023 – Jan 2024</p>
+                    </li>
+                    <li>
+                        <h3 class="text-xl font-semibold"><a href="https://www.linkedin.com/company/bitpolito/posts/?feedView=all" target="_blank">BitPolito Student Team - Politecnico di Torino</a></h3>
+                        <p>Team member</p>
+                        <ul class="list-disc list-inside ml-4 text-gray-700">
+                            <li>Frontend development</li>
+                            <li>Cryptography team member</li>
+                        </ul>
+                        <p class="text-sm text-gray-600">Dec 2022 – Sep 2023</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-4">Projects</h2>
+                <ul class="space-y-4">
+                    <li class="p-5 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Quantum Permutation Synchronization</h3>
+                        <p class="text-gray-700 mb-2"></p>
+                        <div class="flex flex-wrap space-x-2 mb-3">
+                            <span class="px-2 py-1 rounded text-sm" style="background-color: #ffff00; color: #1a1a1a;">Quantum Optimization</span>
+                            <span class="px-2 py-1 rounded text-sm" style="background-color: #ffff00; color: #1a1a1a;">Quantum Annealing</span>
+                            <span class="px-2 py-1 rounded text-sm" style="background-color: #ffff00; color: #1a1a1a;">Quantum Computing</span>
+                        </div>
+                        <a href="qps.html" class="hover:underline">View Project →</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-4">Certificates</h2>
+                <div class="flex flex-wrap space-x-2">
+                    <div class="relative inline-block" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                        <span class="px-4 py-2 rounded cursor-pointer" style="background-color: #ffff00; color: #1a1a1a;">IBM A.I Engineering</span>
+                        <div
+                        x-show="open"
+                        class="absolute shadow-lg rounded mt-2 w-48 p-4 z-10 transition-all duration-300 ease-in-out transform origin-top"
+                        style="background-color: #2a2a2a; color: #e0e0e0;"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 scale-y-75"
+                        x-transition:enter-end="opacity-100 scale-y-100"
+                        x-transition:leave="transition ease-in duration-200"
+                        x-transition:leave-start="opacity-100 scale-y-100"
+                        x-transition:leave-end="opacity-0 scale-y-75"
+                        >
+                            <ul class="text-sm space-y-2">
+                                <li x-data="{ show: false }">
+                                    <button @click="show = !show" class="w-full text-left hover:text-yellow-400">- Machine Learning with python</button>
+                                </li>
+                                <li x-data="{ show: false }">
+                                    <button @click="show = !show" class="w-full text-left hover:text-yellow-400">- Intro to Deep Learning & Neural Networks</button>
+                                    <p x-show="show" x-transition class="text-xs text-gray-600 pl-4">Using Keras</p>
+                                </li>
+                                <li x-data="{ show: false }">
+                                    <button @click="show = !show" class="w-full text-left hover:text-yellow-400">- Introduction to Computer Vision & Image Processing
+                                        </button>
+                                </li>
+                                <li x-data="{ show: false }">
+                                    <button @click="show = !show" class="w-full text-left hover:text-yellow-400">- PyTorch</button>
+                                </li>
+                                <li x-data="{ show: false }">
+                                    <button @click="show = !show" class="w-full text-left hover:text-yellow-400">- Deep Learning</button>
+                                    <p x-show="show" x-transition class="text-xs text-gray-600 pl-4">Keras & TensorFlow</p>
+                                </li>
+                                <li x-data="{ show: false }">
+                                    <button @click="show = !show" class="w-full text-left hover:text-yellow-400">- Final Project</button>
+                                    <p x-show="show" x-transition class="text-xs text-gray-600 pl-4">An image classification model design</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-4">Links</h2>
+                <div class="flex space-x-4">
+                    <a href="https://www.linkedin.com/in/amir-sasanfar" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/AceODiamonds" target="_blank">GitHub</a>
+                    <a href="mailto:sasanfar.amir.99@gmail.com">Email</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="text-white text-center p-4 mt-6" style="background-color: #2a2a2a; border-top: 2px solid #ffff00; box-shadow: 0 0 10px #ffff00;">
         <p>&copy; 2025 Amir Sasanfar.</p>
     </footer>
 

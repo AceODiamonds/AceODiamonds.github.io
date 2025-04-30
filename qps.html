@@ -10,72 +10,70 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
      <style>
         body {
-            background-color: #0d0d2b; /* Deep space blue */
-            color: #00ffff; /* Cyan */
+            background-color: #1a1a1a; /* Deep Black */
+            color: #e0e0e0; /* Off-White */
             font-family: 'Share Tech Mono', monospace;
         }
         h1, h2, h3 {
             font-family: 'Orbitron', sans-serif;
-            color: #ff00ff; /* Magenta */
-            text-shadow: 0 0 5px #ff00ff;
+            color: #ffff00; /* Bright Yellow */
+            text-shadow: 0 0 8px #ffff00; /* Yellow Glow */
         }
 
         header {
-            background-color: #1a1a4f; /* Darker space blue */
-            border-bottom: 2px solid #00ffff;
-            box-shadow: 0 0 10px #00ffff;
+            background-color: #2a2a2a; /* Darker Black */
+            border-bottom: 2px solid #ffff00; /* Yellow Border */
+            box-shadow: 0 0 10px #ffff00; /* Yellow Shadow */
         }
 
          section {
-            background-color: #1a1a4f; /* Darker space blue */
-            border: 1px solid #00ffff;
-            box-shadow: 0 0 8px #00ffff;
+            background-color: #2a2a2a; /* Darker Black */
+            border: 1px solid #ffff00; /* Yellow Border */
+            box-shadow: 0 0 8px rgba(255, 255, 0, 0.6); /* Yellow Shadow */
         }
 
-        .text-indigo-700 {
-            color: #00ffff; /* Cyan */
+        .text-yellow-400 { /* Using a Tailwind yellow class */
+            color: #ffff00; /* Bright Yellow */
         }
 
-        .bg-indigo-700 {
-            background-color: #1a1a4f; /* Darker space blue */
+        .bg-yellow-400 { /* Using a Tailwind yellow class */
+            background-color: #ffff00; /* Bright Yellow */
         }
+
 
         a {
-            color: #00ffff; /* Cyan */
+            color: #ffff00; /* Bright Yellow */
             text-decoration: none;
-            text-shadow: 0 0 3px #00ffff;
+            text-shadow: 0 0 3px #ffff00; /* Yellow Glow */
         }
 
         a:hover {
-            color: #ff00ff; /* Magenta */
-            text-shadow: 0 0 5px #ff00ff;
+            color: #ffffff; /* White */
+            text-shadow: 0 0 8px #ffffff; /* White Glow */
         }
          .rounded-lg {
             border-radius: 8px; /* Subtle rounding */
         }
 
         .shadow-md {
-            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3); /* Cyan shadow */
+            box-shadow: 0 4px 8px rgba(255, 255, 0, 0.3); /* Yellow shadow */
         }
 
-        .bg-white {
-             background-color: #1a1a4f; /* Darker space blue */
-        }
          .text-gray-700 {
-            color: #b0b0b0; /* Light grey for content */
+            color: #e0e0e0; /* Off-White for content */
         }
          .text-gray-500 {
-            color: #808080; /* Grey for smaller text */
+            color: #b0b0b0; /* Light Grey for smaller text */
         }
 
          .bg-gray-100 {
-             background-color: #0d0d2b; /* Deep space blue */
+             background-color: #1a1a1a; /* Deep Black */
          }
 
         footer {
-            background-color: #1a1a4f; /* Darker space blue */
-            border-top: 2px solid #ff00ff;
-            box-shadow: 0 0 10px #ff00ff;
+            background-color: #2a2a2a; /* Darker Black */
+            border-top: 2px solid #ffff00; /* Yellow Border */
+            box-shadow: 0 0 10px #ffff00; /* Yellow Shadow */
         }
 
     </style>
@@ -85,7 +83,7 @@
         <div class="container mx-auto">
             <div class="flex justify-between items-center">
                 <h1 class="text-3xl font-bold">Quantum Permutation Synchronization</h1>
-                <a href="index.html" class="hover:text-indigo-200">← Back to Main Page</a>
+                <a href="index.html" class="hover:text-yellow-400">← Back to Main Page</a>
             </div>
         </div>
     </header>
@@ -110,7 +108,7 @@
         </section>
     </main>
 
-    <footer class="text-white text-center p-4">
+    <footer class="text-white text-center p-4" style="background-color: #2a2a2a; border-top: 2px solid #ffff00; box-shadow: 0 0 10px #ffff00;">
         <p>&copy; 2025 Amir Sasanfar.</p>
     </footer>
 </body>
