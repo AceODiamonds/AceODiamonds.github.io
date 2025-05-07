@@ -10,51 +10,51 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
      <style>
         body {
-            background-image: url('./files/bg3.png'); 
-            background-size: cover; 
-            background-color: #1a1a1a; 
-            color: #e0e0e0; 
+            background-image: url('./files/bg3.png');
+            background-size: cover;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
             font-family: 'Share Tech Mono', monospace;
         }
         h1, h2, h3 {
             font-family: 'Orbitron', sans-serif;
-            color: #ffff00; 
-            text-shadow: 0 0 8px #ffff00; 
+            color: #ffff00;
+            text-shadow: 0 0 8px #ffff00;
         }
 
         header {
-            background-color: #2a2a2a; 
-            border-bottom: 2px solid #ffff00; 
-            box-shadow: 0 0 10px #ffff00; 
+            background-color: #2a2a2a;
+            border-bottom: 2px solid #ffff00;
+            box-shadow: 0 0 10px #ffff00;
         }
 
          section {
-            background-color: #2a2a2a; 
-            border: 1px solid #ffff00; 
-            box-shadow: 0 0 8px rgba(255, 255, 0, 0.6); 
+            background-color: #2a2a2a;
+            border: 1px solid #ffff00;
+            box-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
         }
 
-        .text-yellow-400 { 
-            color: #ffff00; 
+        .text-yellow-400 {
+            color: #ffff00;
         }
 
-        .bg-yellow-400 { 
-            background-color: #ffff00; 
+        .bg-yellow-400 {
+            background-color: #ffff00;
         }
 
 
         a {
-            color: #ffff00; 
+            color: #ffff00;
             text-decoration: none;
-            text-shadow: 0 0 3px #ffff00; 
+            text-shadow: 0 0 3px #ffff00;
         }
 
         a:hover {
-            color: #ffffff; 
-            text-shadow: 0 0 8px #ffffff; 
+            color: #ffffff;
+            text-shadow: 0 0 8px #ffffff;
         }
          .rounded-lg {
-            border-radius: 8px; 
+            border-radius: 8px;
         }
 
         .shadow-md {
@@ -62,38 +62,37 @@
         }
 
          .text-gray-700 {
-            color: #e0e0e0; 
+            color: #e0e0e0;
         }
          .text-gray-500 {
-            color: #b0b0b0; 
-        }
+            color: #b0b0b0;
+         }
 
          .bg-gray-100 {
-             background-color: #1a1a1a; 
+             background-color: #1a1a1a;
          }
 
         footer {
-            background-color: #2a2a2a; 
-            border-top: 2px solid #ffff00; 
+            background-color: #2a2a2a;
+            border-top: 2px solid #ffff00;
             box-shadow: 0 0 10px #ffff00;
         }
 
-        /* Added styles for image container and images */
+        /* Updated styles for image container and images */
         .image-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column; /* Arrange images vertically */
+            align-items: center; /* Center images horizontally */
             overflow: hidden; /* Hide overflowing parts of the image */
-            width: 100%; /* Or set a fixed width */
-            max-height: 300px; /* Set a maximum height for the frame */
+            width: 100%; /* Container takes full width */
         }
 
         .image-container img {
             display: block; /* Remove extra space below the image */
-            max-width: 100%; /* Ensure image scales down to fit container width */
-            max-height: 100%; /* Ensure image scales down to fit container height */
-            object-fit: contain; /* Scale the image to fit within the container, maintaining aspect ratio */
-            margin: auto; /* Center the image within the container */
+            width: 95%; /* Set a larger consistent width for all images */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Scale the image to fit within the specified dimensions, maintaining aspect ratio */
+            margin: 10px auto; /* Add margin above and below each image and center */
         }
 
     </style>
@@ -114,7 +113,7 @@
             <p class="mb-4 text-gray-700">
                 (it's still under development and testing) <br>
                 This project is based on the research paper <a href="https://arxiv.org/abs/2101.07755" target="_blank">"Quantum Permutation Synchronization"</a>
-                
+
             </p>
         </section>
 
@@ -128,9 +127,9 @@
             <p class="text-gray-700">
                 Point matching across the images has been done using QUBO formulation and QAOA.
             </p>
-            <div class="flex justify-around mt-4 image-container">
-                <img src="./files/result1.png" alt="Result Image 1" class="w-1/2 mx-2 rounded-lg shadow-md">
-                <img src="./files/result2.png" alt="Result Image 2" class="w-1/2 mx-2 rounded-lg shadow-md">
+            <div class="mt-4 image-container">
+                <img src="./files/result1.png" alt="Result Image 1" class="rounded-lg shadow-md">
+                <img src="./files/result2.png" alt="Result Image 2" class="rounded-lg shadow-md">
             </div>
         </section>
     </main>
