@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amir Sasanfar - Quantum Engineer</title>
+    <title>Amir Sasanfar - Computer & Quantum Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -11,112 +11,112 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <style>
         body {
-            background-image: url('./files/bg2.png'); /* Add background image */
-            background-size: cover; /* Cover the entire background */
-            background-position: center; /* Center the background image */
-            background-repeat: no-repeat; /* Do not repeat the image */
-            background-color: #1a1a1a; /* Deep Black - fallback color */
-            color: #e0e0e0; /* Off-White */
+            background-image: url('./files/bg2.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-color: #1a1a1a; 
+            color: #e0e0e0; 
             font-family: 'Share Tech Mono', monospace;
         }
 
         h1, h2, h3 {
             font-family: 'Orbitron', sans-serif;
-            color: #ffff00; /* Bright Yellow */
-            text-shadow: 0 0 8px #ffff00; /* Yellow Glow */
+            color: #ffff00; 
+            text-shadow: 0 0 8px #ffff00; 
         }
 
         header {
-            background-color: #2a2a2a; /* Darker Black */
-            border-bottom: 2px solid #ffff00; /* Yellow Border */
-            box-shadow: 0 0 10px #ffff00; /* Yellow Shadow */
+            background-color: #2a2a2a; 
+            border-bottom: 2px solid #ffff00; 
+            box-shadow: 0 0 10px #ffff00; 
         }
 
         section {
-            background-color: #2a2a2a; /* Darker Black */
-            border: 1px solid #ffff00; /* Yellow Border */
-            box-shadow: 0 0 8px rgba(255, 255, 0, 0.6); /* Yellow Shadow */
-            padding: 1.5rem; /* p-6 equivalent */
-            border-radius: 8px; /* rounded-lg equivalent */
+            background-color: #2a2a2a; 
+            border: 1px solid #ffff00; 
+            box-shadow: 0 0 8px rgba(255, 255, 0, 0.6); 
+            padding: 1.5rem; 
+            border-radius: 8px; 
         }
 
-        .text-yellow-400 { /* Using a Tailwind yellow class */
-            color: #ffff00; /* Bright Yellow */
+        .text-yellow-400 { 
+            color: #ffff00; 
         }
 
-        .text-gray-300 { /* Using a Tailwind gray class for less important text */
-            color: #b0b0b0; /* Light Grey */
+        .text-gray-300 { 
+            color: #b0b0b0; 
         }
 
 
         a {
-            color: #ffff00; /* Bright Yellow */
+            color: #ffff00; 
             text-decoration: none;
-            text-shadow: 0 0 3px #ffff00; /* Yellow Glow */
+            text-shadow: 0 0 3px #ffff00; 
         }
 
         a:hover {
-            color: #ffffff; /* White */
-            text-shadow: 0 0 8px #ffffff; /* White Glow */
+            color: #ffffff; 
+            text-shadow: 0 0 8px #ffffff;
         }
          .rounded-lg {
-            border-radius: 8px; /* Subtle rounding */
+            border-radius: 8px; 
         }
 
         .shadow-md {
-            box-shadow: 0 4px 8px rgba(255, 255, 0, 0.3); /* Yellow shadow */
+            box-shadow: 0 4px 8px rgba(255, 255, 0, 0.3); 
         }
 
          .text-gray-700 {
-            color: #e0e0e0; /* Off-White for content */
+            color: #e0e0e0; 
         }
          .text-gray-600 {
-            color: #b0b0b0; /* Light Grey for smaller text */
+            color: #b0b0b0; 
         }
          .text-gray-800 {
-             color: #ffff00; /* Bright Yellow */
+             color: #ffff00; 
          }
          .bg-gray-100 {
-             background-color: #1a1a1a; /* Deep Black */
+             background-color: #1a1a1a; 
          }
         footer {
-            background-color: #2a2a2a; /* Darker Black */
-            border-top: 2px solid #ffff00; /* Yellow Border */
-            box-shadow: 0 0 10px #ffff00; /* Yellow Shadow */
+            background-color: #2a2a2a; 
+            border-top: 2px solid #ffff00; 
+            box-shadow: 0 0 10px #ffff00; 
         }
 
-        /* Custom layout for left sidebar */
+        
         .main-layout {
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            flex-wrap: wrap; 
         }
 
         .left-sidebar {
-            width: 100%; /* Full width by default */
-            padding: 1.5rem; /* p-6 equivalent */
+            width: 100%; 
+            padding: 1.5rem; 
         }
 
         .main-content {
-            width: 100%; /* Full width by default */
-            padding: 1.5rem; /* p-6 equivalent */
+            width: 100%; 
+            padding: 1.5rem; 
         }
 
-        @media (min-width: 768px) { /* Medium screens and up */
+        @media (min-width: 768px) { 
             .main-layout {
-                align-items: flex-start; /* Align tops of flex items (sidebar and main content) */
+                align-items: flex-start; 
             }
             .left-sidebar {
-                width: 30%; /* Adjust width as needed */
-                padding-right: 1.5rem; /* Add some spacing to the right */
+                width: 30%; 
+                padding-right: 1.5rem; 
             }
             .main-content {
-                width: 70%; /* Adjust width accordingly */
+                width: 70%; 
             }
-            /* Apply top margin to sections within main content *except* the first one */
+            
             .main-content > section + section {
-                margin-top: 1.5rem; /* Add top margin to sections that come after another section */
+                margin-top: 1.5rem; 
             }
-             /* Ensure the very first section in main content has no extra top margin */
+             
              .main-content > section:first-child {
                  margin-top: 0;
              }
